@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#000000">
+<title>ZOMBIE APOCALYPSE: LAST SURVIVOR</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="hurt"></div>
+
+<div id="hud" class="hidden">
+  <div id="bars">
+    <div class="bar"><i id="hp"></i><span>HEALTH</span></div>
+    <div class="bar st"><i id="sp"></i><span>STAMINA</span></div>
+  </div>
+  <div id="score">SCORE 0</div>
+  <div id="mission"></div>
+  <button id="pauseBtn" data-a="pause">❚❚</button>
+  <div id="joy"><div id="knob"></div></div>
+  <button id="run" class="act">RUN</button>
+  <button id="jmp" class="act">JUMP</button>
+  <button id="atk" class="act">ATTACK</button>
+  <div id="toast"></div>
+</div>
+
+<div id="sMenu" class="screen">
+  <h1>ZOMBIE APOCALYPSE</h1>
+  <h2>LAST SURVIVOR</h2>
+  <button class="btn main" data-a="play">PLAY</button>
+  <button class="btn" data-a="settings">SETTINGS</button>
+  <button class="btn" data-a="help">INSTRUCTIONS</button>
+  <p id="best" class="dim"></p>
+</div>
+
+<div id="sHelp" class="screen hidden">
+  <h2>HOW TO SURVIVE</h2>
+  <div class="panel">
+    <p><b>Left stick</b> – move &nbsp; <b>Drag screen</b> – look around</p>
+    <p><b>ATTACK</b> – swing your bat (auto-aims at close zombies)</p>
+    <p><b>JUMP</b> – hop over cars &nbsp; <b>RUN</b> – toggle sprint (uses stamina)</p>
+    <p><b>Missions:</b> 1) Kill 10 zombies 2) Collect 3 glowing supply crates 3) Survive 60 seconds until extraction.</p>
+    <p>Green-cross medkits sometimes drop from zombies. Runners are fast, Brutes are tough.</p>
+    <p class="dim">PC: WASD move, mouse drag look, Space jump, Shift run, J/F attack, Esc pause.</p>
+  </div>
+  <button class="btn" data-a="menu">BACK</button>
+</div>
+
+<div id="sSet" class="screen hidden">
+  <h2>SETTINGS</h2>
+  <button class="btn" id="gfx" data-a="gfx">GRAPHICS: AUTO</button>
+  <label class="panel">Camera sensitivity<br><input id="sens" type="range" min="0.4" max="2.5" step="0.1" value="1"></label>
+  <p class="dim">Auto switches to Low if the frame rate drops.</p>
+  <button class="btn" data-a="menu">BACK</button>
+</div>
+
+<div id="sPause" class="screen hidden">
+  <h2>PAUSED</h2>
+  <button class="btn main" data-a="resume">RESUME</button>
+  <button class="btn" data-a="play">RESTART</button>
+  <button class="btn" data-a="menu">MAIN MENU</button>
+</div>
+
+<div id="sOver" class="screen hidden">
+  <h1 class="red">YOU DIED</h1>
+  <p class="stats" id="statOver"></p>
+  <button class="btn main" data-a="play">TRY AGAIN</button>
+  <button class="btn" data-a="menu">MAIN MENU</button>
+</div>
+
+<div id="sWin" class="screen hidden">
+  <h1 class="gold">EXTRACTION COMPLETE</h1>
+  <h2>YOU SURVIVED</h2>
+  <p class="stats" id="statWin"></p>
+  <button class="btn main" data-a="play">PLAY AGAIN</button>
+  <button class="btn" data-a="menu">MAIN MENU</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
